@@ -14,21 +14,23 @@ body{
 </head>
 <body>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+const page = params.get("page") || "home";
+document.body.innerHTML += `
 <script
   src="https://giscus.app/client.js"
   data-repo="vqtuan789/xiaozhiai-iot-comments"
-  data-repo-id="REPO_ID_CỦA_BẠN"
+  data-repo-id="REPO_ID"
   data-category="General"
-  data-category-id="CATEGORY_ID_CỦA_BẠN"
-  data-mapping="pathname"
-  data-strict="1"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
+  data-category-id="CATEGORY_ID"
+  data-mapping="specific"
+  data-term="${page}"
   data-theme="preferred_color_scheme"
   data-lang="vi"
   crossorigin="anonymous"
   async>
+<\/script>`;
 </script>
 
 </body>
